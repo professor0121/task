@@ -3,46 +3,6 @@
  * Created by Er. Abhishek Kushwaha
  * Date:  3/26/2025
  */
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Array Functions</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        div{
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f1f1f1;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        h1{
-            text-align: center;
-        }
-        p{
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<div>
-    <h1>Array Functions</h1>
-    <p>1. Write a PHP script to calculate the sum of values in an array.</p>
-    <p>2. Write a PHP script to get the highest value in an array.</p>
-    <p>3. Write a PHP script to merge two arrays.</p>
-    <p>4. Write a PHP script to count the number of occurrences of a specific value in an array.</p>
-    <p>5. Write a PHP script to remove duplicates from an array.</p>
-    <p>6. Write a PHP script to get the array elements in reverse order.</p>
-</div>
-
-<?php
 include 'include/arraySum.php';
 include 'include/maxValArray.php';
 include 'include/mergeArray.php';
@@ -83,16 +43,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Operations</title>
+    <title>Array Functions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body class="bg-light">
+    <div>
+        <h1>Array Functions</h1>
+        <p>1. Write a PHP script to calculate the sum of values in an array.</p>
+        <p>2. Write a PHP script to get the highest value in an array.</p>
+        <p>3. Write a PHP script to merge two arrays.</p>
+        <p>4. Write a PHP script to count the number of occurrences of a specific value in an array.</p>
+        <p>5. Write a PHP script to remove duplicates from an array.</p>
+        <p>6. Write a PHP script to get the array elements in reverse order.</p>
+    </div>
     <div class="container mt-5">
         <div class="card shadow p-4">
             <h2 class="text-center">Array Operations</h2>
