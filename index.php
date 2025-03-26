@@ -1,7 +1,4 @@
-  <form action="index.php">
-    <input type="number" name="name">
-    <input type="submit" value="submit">
- </form>
-
-
  <?php
+include 'include/arraySum.php';
+$array = [1, 2, 3, 4, 5, 6, 7, 8];
+echo sumArray($array);
