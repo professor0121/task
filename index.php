@@ -74,15 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="bg-light">
-    <div>
-        <h1>Array Functions</h1>
-        <p>1. Write a PHP script to calculate the sum of values in an array.</p>
-        <p>2. Write a PHP script to get the highest value in an array.</p>
-        <p>3. Write a PHP script to merge two arrays.</p>
-        <p>4. Write a PHP script to count the number of occurrences of a specific value in an array.</p>
-        <p>5. Write a PHP script to remove duplicates from an array.</p>
-        <p>6. Write a PHP script to get the array elements in reverse order.</p>
-    </div>
     <div class="container mt-5">
         <div class="card shadow p-4">
             <h2 class="text-center">Array Operations</h2>
