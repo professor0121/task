@@ -112,11 +112,7 @@ include 'include/student-registration-form.php'
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Calculate</button>
             </form>
-            <?php if (!empty($result)) : ?>
-                <div class="alert alert-info mt-3">
-                    <strong>Result:</strong> <?php echo $result; ?>
-                </div>
-            <?php endif; ?>
+            
         </div>
     </div>
 </body>
