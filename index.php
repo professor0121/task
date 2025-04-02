@@ -3,47 +3,56 @@
  * Created by Er. Abhishek Kushwaha
  * Date:  3/26/2025
  */
-include 'include/arraySum.php';
-include 'include/maxValArray.php';
-include 'include/mergeArray.php';
-include 'include/countOccurance.php';
-include 'include/removeDuplicates.php';
-include 'include/reverseArray.php';
+// include 'include/arraySum.php';
+// include 'include/maxValArray.php';
+// include 'include/mergeArray.php';
+// include 'include/countOccurance.php';
+// include 'include/removeDuplicates.php';
+// include 'include/reverseArray.php';
+include 'include/student-registration-form.php'
 
-$array = [];
-$array2 = [];
-$result = "";
+// $array = [];
+// $array2 = [];
+// $result = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $array = explode(',', $_POST['array1']);
-    $array2 = isset($_POST['array2']) ? explode(',', $_POST['array2']) : [];
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $array = explode(',', $_POST['array1']);
+//     $array2 = isset($_POST['array2']) ? explode(',', $_POST['array2']) : [];
     
-    switch ($_POST['operation']) {
-        case 'sum':
-            $result = "Sum of Array: " . sumArray($array);
-            break;
-        case 'max':
-            $result = "Max Value: " . maxVal($array);
-            break;
-        case 'merge':
-            $result = "Merged Array: " . implode(', ', mergeArray($array, $array2));
-            break;
-        case 'count':
-            $target = $_POST['target'] ?? 0;
-            $result = "Occurrences of $target: " . countOccurance($array, $target);
-            break;
-        case 'removeDuplicates':
-            $result = "Array without Duplicates: " . implode(', ', removeDuplicates($array));
-            break;
-        case 'reverse':
-            $result = "Reversed Array: " . implode(', ', reverseArray($array));
-            break;
-        default:
-            $result = "Invalid Operation";
-    }
-}
+//     switch ($_POST['operation']) {
+//         case 'sum':
+//             $result = "Sum of Array: " . sumArray($array);
+//             break;
+//         case 'max':
+//             $result = "Max Value: " . maxVal($array);
+//             break;
+//         case 'merge':
+//             $result = "Merged Array: " . implode(', ', mergeArray($array, $array2));
+//             break;
+//         case 'count':
+//             $target = $_POST['target'] ?? 0;
+//             $result = "Occurrences of $target: " . countOccurance($array, $target);
+//             break;
+//         case 'removeDuplicates':
+//             $result = "Array without Duplicates: " . implode(', ', removeDuplicates($array));
+//             break;
+//         case 'reverse':
+//             $result = "Reversed Array: " . implode(', ', reverseArray($array));
+//             break;
+//         default:
+//             $result = "Invalid Operation";
+//     }
+// }
+
+/**
+ * create a student registration form .
+ */
+
+
+
+
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -111,4 +120,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </body>
-</html>
+</html> -->
