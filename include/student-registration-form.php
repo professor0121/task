@@ -1,9 +1,65 @@
 <?php
 
+    //Data Base Creation
+    $servername     = "localhost";
+    $username       = "root";
+    $password       = "";
+    $create_db_name = "school";
 
+    //Connection of myqli
+    $connection = new mysqli($servername, $username, $password);
+    if ($connection->connect_error) {
+        die("Connection is failed due to :" . $connection->connect_error);
+    }
+
+    $sql = "CREATE DATABASE IF NOT EXISTS $create_db_name";
+    if ($connection->query($sql) == true) {
+        echo "Database created succssefull or exists";
+    } else {
+        die("something went wrong" . $connection->error);
+    }
+
+    //use db
+    $connection->select_db($create_db_name);
+
+    $table_sql = "CREATE TABLE IF NOT EXISTS students (
+        id INT(11) AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        age INT(3) NOT NULL,
+        course VARCHAR(100) NOT NULL
+    )";
+
+    if ($connection->query($table_sql) == true) {
+        echo "Table created successfully or exists";
+    } else {
+        die("something went wrong" . $connection->error);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name   = $_POST['name'];
+        $email  = $_POST['email'];
+        $age    = $_POST['age'];
+        $course = $_POST['course'];
+        echo $name . $email . $age . $course;
+
+    }
+
+    $insert_sql = "INSERT INTO students (name, email, age, course) 
+                   VALUES ('$name', '$email', '$age', '$course')";
+
+      if ($connection->query($insert_sql) == true) {
+        echo "data saved sucessfully or exists";
+    } else {
+        die("something went wrong" . $connection->error);
+    }
+
+  
+    $connection->close();
 ?>
 <style>
     .custom-form {
+    margin:50 auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -52,7 +108,8 @@ button:hover {
 }
 
 </style>
-<form class="custom-form">
+<div>
+<form class="custom-form" method="POST">
 <div class="form-group">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
@@ -79,3 +136,4 @@ button:hover {
     <button type="submit">Submit</button>
 </div>
 </form>
+</div>
