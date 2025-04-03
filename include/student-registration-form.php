@@ -1,70 +1,70 @@
 <?php
 
-    // Data Base Creation
-    $servername     = "localhost";
-    $username       = "root";
-    $password       = "";
-    $create_db_name = "school";
+//     // Data Base Creation
+//     $servername     = "localhost";
+//     $username       = "root";
+//     $password       = "";
+//     $create_db_name = "school";
 
-    // Connection of mysqli
-    $connection = new mysqli($servername, $username, $password);
+//     // Connection of mysqli
+//     $connection = new mysqli($servername, $username, $password);
 
-    $sql = "CREATE DATABASE IF NOT EXISTS $create_db_name";
-    $connection->query($sql);
+//     $sql = "CREATE DATABASE IF NOT EXISTS $create_db_name";
+//     $connection->query($sql);
 
-    // Use db
-    $connection->select_db($create_db_name);
+//     // Use db
+//     $connection->select_db($create_db_name);
 
-    $table_sql = "CREATE TABLE IF NOT EXISTS students (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    age INT(3) NOT NULL,
-    course VARCHAR(100) NOT NULL
-)";
-    $connection->query($table_sql);
+//     $table_sql = "CREATE TABLE IF NOT EXISTS students (
+//     id INT(11) AUTO_INCREMENT PRIMARY KEY,
+//     name VARCHAR(100) NOT NULL,
+//     email VARCHAR(100) NOT NULL,
+//     age INT(3) NOT NULL,
+//     course VARCHAR(100) NOT NULL
+// )";
+//     $connection->query($table_sql);
 
-    if (isset($_GET['delete_id'])) {
-        $delete_id = $_GET['delete_id'];
-        $delete_sql = "DELETE FROM students WHERE id = $delete_id";
-        $connection->query($delete_sql);
+//     if (isset($_GET['delete_id'])) {
+//         $delete_id = $_GET['delete_id'];
+//         $delete_sql = "DELETE FROM students WHERE id = $delete_id";
+//         $connection->query($delete_sql);
     
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit();
-    }
+//         header("Location: " . $_SERVER['PHP_SELF']);
+//         exit();
+//     }
 
-    if(isset($_GET['edit_id'])){
-        $edit_id=$_GET['edit_id'];
-        $edit_sql="SELECT * FROM students WHERE id=$edit_id";
-        $edit_result=$connection->query($edit_sql);
-        $row=$edit_result->fetch_assoc();
-            print_r($row['id']);
-            print_r($row['name']);
-            print_r($row['email']);
-            print_r($row['age']);
-            print_r($row['course']);
-        }
+//     if(isset($_GET['edit_id'])){
+//         $edit_id=$_GET['edit_id'];
+//         $edit_sql="SELECT * FROM students WHERE id=$edit_id";
+//         $edit_result=$connection->query($edit_sql);
+//         $row=$edit_result->fetch_assoc();
+//             print_r($row['id']);
+//             print_r($row['name']);
+//             print_r($row['email']);
+//             print_r($row['age']);
+//             print_r($row['course']);
+//         }
     
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name       = $_POST['name'];
-        $email      = $_POST['email'];
-        $age        = $_POST['age'];
-        $course     = $_POST['course'];
-        $insert_sql = "INSERT INTO students (name, email, age, course)
-                   VALUES ('$name', '$email', '$age', '$course')";
-        $connection->query($insert_sql);
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         $name       = $_POST['name'];
+//         $email      = $_POST['email'];
+//         $age        = $_POST['age'];
+//         $course     = $_POST['course'];
+//         $insert_sql = "INSERT INTO students (name, email, age, course)
+//                    VALUES ('$name', '$email', '$age', '$course')";
+//         $connection->query($insert_sql);
 
-        header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
-    }
+//         header("Location: " . $_SERVER['PHP_SELF']);
+//     exit();
+//     }
 
-    $result = null;
-    $result_sql="SELECT * FROM students";
-    $result = $connection->query($result_sql);
+//     $result = null;
+//     $result_sql="SELECT * FROM students";
+//     $result = $connection->query($result_sql);
 
   
-    $connection->close();
+//     $connection->close();
 ?>
 <style>
     .custom-form {
