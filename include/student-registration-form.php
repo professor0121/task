@@ -33,6 +33,19 @@
         exit();
     }
 
+    if(isset($_GET['edit_id'])){
+        $edit_id=$_GET['edit_id'];
+        $edit_sql="SELECT * FROM students WHERE id=$edit_id";
+        $edit_result=$connection->query($edit_sql);
+        $row=$edit_result->fetch_assoc();
+            print_r($row['id']);
+            print_r($row['name']);
+            print_r($row['email']);
+            print_r($row['age']);
+            print_r($row['course']);
+        }
+    
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name       = $_POST['name'];
         $email      = $_POST['email'];
@@ -189,6 +202,7 @@ table {
                 <th>Email</th>
                 <th>Age</th>
                 <th>Course</th>
+                <th>Edit</th>
                 <th>Delete</th>
             </tr>
         </thead>
@@ -200,6 +214,9 @@ table {
                     <td><?php echo $row['email']?></td>
                     <td><?php echo $row['age']?></td>
                     <td><?php echo $row['course']?></td>
+                    <td>
+                        <a href="?edit_id=<?php echo $row['id']; ?>" class="edit-button">Edit</a>
+                    </td>
                     <td>
                         <a href="?delete_id=<?php echo $row['id']; ?>" class="delete-button">Delete</a>
                     </td>
