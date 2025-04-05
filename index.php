@@ -9,7 +9,9 @@
 // include 'include/countOccurance.php';
 // include 'include/removeDuplicates.php';
 // include 'include/reverseArray.php';
-include 'include/student-registration-form.php'
+// include 'include/student-registration-form.php';
+// include 'api/curl-api-call.php';
+include 'api/api-call-http.php';
 
 // $array = [];
 // $array2 = [];
