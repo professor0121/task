@@ -11,7 +11,8 @@
 // include 'include/reverseArray.php';
 // include 'include/student-registration-form.php';
 // include 'api/curl-api-call.php';
-include 'api/api-call-http.php';
+// include 'api/api-call-http.php';
+include 'api/file-upload.php';
 
 // $array = [];
 // $array2 = [];
